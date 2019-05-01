@@ -15,3 +15,9 @@
 #Sql Incluido
 
 # Creditos Para Seu Criador
+
+# Alguns Updates e Traducoes
+
+# Numeros Comecam Por 91
+
+# Agradecimento a https://github.com/nunokisc Pela Sua Contribuicao Nos Updates!
