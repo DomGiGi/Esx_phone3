@@ -180,7 +180,7 @@ AddEventHandler('esx_phone:onMessage', function(phoneNumber, message, position, 
   if dispatchRequestId then
 
     CurrentAction            = 'dispatch'
-    CurrentActionMsg         = job .. ' - Appuyez sur ~INPUT_CONTEXT~ pour prendre l\'appel'
+    CurrentActionMsg         = job .. ' - Carregue no ~INPUT_CONTEXT~ para aceitar o pedido'
     CurrentDispatchRequestId = dispatchRequestId
 
     CurrentActionData = {
@@ -351,7 +351,8 @@ RegisterNUICallback('add_contact', function(data, cb)
   end
 
   cb('OK')
-
+    
+ESX.UI.Menu.Close('phone', GetCurrentResourceName(), 'main')
 end)
 
 RegisterNUICallback('escape', function()
@@ -399,7 +400,7 @@ RegisterNUICallback('bank_transfer', function(data, cb)
   if amount ~= nil then
     TriggerServerEvent('esx_phone:bankTransfer', data.player, amount)
   else
-    ESX.ShowNotification('Montant invalide')
+    ESX.ShowNotification('Montante invalide')
   end
 
 end)
@@ -477,7 +478,7 @@ Citizen.CreateThread(function()
       DisableControlAction(0, 17,   true) -- Select Prev Weapon
     else
 
-      if IsDisabledControlJustReleased(0, Keys['1']) then
+      if IsDisabledControlJustReleased(0, Keys['F1']) then
 
         if not GUI.IsOpen then
           ESX.UI.Menu.CloseAll()
@@ -486,7 +487,7 @@ Citizen.CreateThread(function()
 
       end
 
-      if IsControlJustReleased(0, Keys['U']) and GUI.IsOpen then
+      if IsControlJustReleased(0, Keys['F10']) and GUI.IsOpen then
         
         SendNUIMessage({
           activateGPS = true
